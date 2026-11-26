@@ -46,22 +46,39 @@ a{color:inherit;text-decoration:none}
 .icon{width:44px;height:44px;border-radius:12px;background:var(--fuchsia);color:#000;display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:800}
 .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .proj{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px}
+.proj.feat{border-color:var(--fuchsia-border);background:radial-gradient(120% 120% at 0% 0%, rgba(255,77,166,0.12), transparent 60%), var(--panel)}
+.badge{display:inline-block;margin-bottom:10px;color:var(--fuchsia);font-family:'Sora',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase}
+#projects{scroll-margin-top:40px}
 .proj h4{font-family:'Sora',sans-serif;font-size:15px;letter-spacing:-0.01em}.proj p{color:var(--muted);font-size:13.5px;margin:8px 0 14px;line-height:1.6}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .cbox{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px}
 .footer{padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px;text-align:center;letter-spacing:0.04em}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 30px;max-width:560px}
+.tile{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:18px;border:1px solid var(--fuchsia-border);background:linear-gradient(160deg,rgba(255,77,166,0.12),rgba(255,77,166,0.02)),var(--panel);transition:transform .25s,box-shadow .25s,border-color .25s}
+.tile:hover{transform:translateY(-6px);border-color:var(--fuchsia);box-shadow:0 16px 36px -12px rgba(255,77,166,0.45)}
+.tile .ti{width:34px;height:34px;border-radius:10px;background:var(--fuchsia);color:#000;display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:800;font-size:12px;margin-bottom:4px}
+.tile b{font-family:'Sora',sans-serif;font-size:13.5px;letter-spacing:-0.01em;line-height:1.25;color:#fff}
+.tile small{color:var(--muted);font-size:11px;font-weight:600;transition:color .2s}.tile:hover small{color:var(--fuchsia)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.float{display:inline-block;animation:floaty 3.2s ease-in-out infinite;box-shadow:0 12px 28px -14px rgba(255,77,166,0.6)}
+.float-2{animation-delay:-1.6s}
+.float:hover{animation-play-state:paused;box-shadow:0 18px 38px -12px rgba(255,77,166,0.7)}
+.proj{transition:transform .25s,box-shadow .25s,border-color .25s}.proj:hover{transform:translateY(-6px);border-color:var(--fuchsia);box-shadow:0 20px 44px -18px rgba(255,77,166,0.5)}
+.card:hover{box-shadow:0 16px 36px -18px rgba(255,77,166,0.4)}
+@media(prefers-reduced-motion:reduce){.float{animation:none}}
+@media(max-width:520px){.tiles{grid-template-columns:1fr}}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:110px}.h1{font-size:40px}.grid3,.projects,.contact{grid-template-columns:1fr}.nav a:not(.cta){display:none}.head h2{font-size:30px}}
 </style></head>
 <body>
-<div class="top"><div class="logo">RSC</div><div class="nav"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="cta" href="#contact">Let's Talk</a></div></div>
+<div class="top"><div class="logo">RSC</div><div class="nav"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="cta" href="#contact">Let's Talk</a></div></div>
 <div class="wrap">
 <div class="hero" id="home">
 <div>
 <div class="kicker">Software Engineer • Portfolio</div>
 <h1 class="h1">Building <em>Reliable</em><br>Systems</h1>
 <p class="lead">I design, test, and manage robust products — combining <span style="color:#fff">system testing, thoughtful UI/UX, and project leadership</span> to ship high-quality software at scale.</p>
-<div class="pills"><a class="pill" href="#skill-testing">System Testing</a><a class="pill" href="#skill-uiux">UI/UX</a><a class="pill" href="#skill-pm">Project Management</a></div>
-<div class="btns"><a class="btn btn-p" href="#projects">View Projects</a><a class="btn btn-g" id="resume-btn" href="Ropafadzo_Chamboko_CV.pdf" target="_blank" rel="noopener">Download Resume</a></div>
+<div class="tiles"><a class="tile" href="#skill-testing"><span class="ti">QA</span><b>System Testing</b><small>View skill →</small></a><a class="tile" href="#skill-uiux"><span class="ti">UI</span><b>UI/UX</b><small>View skill →</small></a><a class="tile" href="#skill-pm"><span class="ti">PM</span><b>Project Management</b><small>View skill →</small></a></div>
+<div class="btns"><a class="btn btn-p float" href="#projects">View Projects</a><a class="btn btn-g float float-2" id="resume-btn" href="Ropafadzo_Chamboko_CV.pdf" target="_blank" rel="noopener">Download Resume</a></div>
 </div>
 <div class="profile">
 <div class="avatar"><img src="profile.jpg" alt="Ropafadzo Chamboko"></div>
@@ -88,21 +105,28 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
+<div class="section" id="skills">
+<div class="head"><h2>Skills in Practice</h2><p>How I apply my testing, delivery and engineering skills day to day.</p></div>
+<div class="grid3">
+<div class="card"><div class="icon">QA</div><h3>QA Strategy & Test Execution</h3><div class="sub">Built full test plan with 120+ test cases, manual execution and bug tracking board. Reduced production bugs by structured QA.</div><div class="tags"><span>Manual Testing</span><span>QA</span><span>Bug Tracking</span></div></div>
+<div class="card"><div class="icon">AG</div><h3>Agile Delivery Framework</h3><div class="sub">Implemented Scrum ceremonies, sprint planning and delivery tracking. Improved team velocity and communication.</div><div class="tags"><span>Agile Scrum</span><span>Project Management</span></div></div>
+<div class="card"><div class="icon">DB</div><h3>Java / MySQL Enterprise Module</h3><div class="sub">Designed database schema, efficient queries and system testing for reliable data operations.</div><div class="tags"><span>Java</span><span>MySQL</span><span>System Testing</span></div></div>
+</div>
+</div>
+
 <div class="section" id="projects">
-<div class="head"><h2>Selected Work</h2><p>Quality-focused projects demonstrating end-to-end ownership.</p></div>
+<div class="head"><h2>Selected Work</h2><p>Real projects I have designed, built and shipped.</p></div>
 <div class="projects">
-<div class="proj"><h4> QA Strategy & Test Execution</h4><p>Built full test plan with 120+ test cases, manual execution and bug tracking board. Reduced production bugs by structured QA.</p><div class="tags"><span>Manual Testing</span><span>QA</span><span>Bug Tracking</span></div></div>
-<div class="proj"><h4> Portfolio System — Black + Fuchsia</h4><p>Designed and developed this portfolio with Sora & Plus Jakarta Sans typography, responsive layout and premium interaction.</p><div class="tags"><span>UI/UX</span><span>Website Dev</span><span>Sora Font</span></div></div>
-<div class="proj"><h4> Agile Delivery Framework</h4><p>Implemented Scrum ceremonies, sprint planning and delivery tracking. Improved team velocity and communication.</p><div class="tags"><span>Agile Scrum</span><span>Project Management</span></div></div>
-<div class="proj"><h4> Java / MySQL Enterprise Module</h4><p>Designed database schema, efficient queries and system testing for reliable data operations.</p><div class="tags"><span>Java</span><span>MySQL</span><span>System Testing</span></div></div>
+<div class="proj feat"><div class="badge">Featured</div><h4>MedConnect — Telemedicine App</h4><p>A telemedicine web application that connects patients with healthcare providers online. Built in PHP with a MySQL database, using AI tools like Cursor to speed up development.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>Cursor AI</span><span>Telemedicine</span></div></div>
+<div class="proj feat"><div class="badge">Featured</div><h4>Personal Portfolio Website</h4><p>This portfolio site, built with HTML, version-controlled on GitHub and deployed on Netlify. Black and fuchsia design with a responsive layout.</p><div class="tags"><span>HTML</span><span>GitHub</span><span>Netlify</span><span>UI/UX</span></div></div>
 </div>
 </div>
 
 <div class="section" id="contact">
 <div class="head"><h2>Let's build something reliable.</h2><p>Available for projects, collaborations and professional opportunities in Harare & remote.</p></div>
 <div class="contact">
-<div class="cbox"><h4>📱 WhatsApp</h4><p style="font-family:Sora;font-size:18px;font-weight:700">+263 719 217 210</p><div style="margin-top:14px"><a class="btn btn-p" href="https://wa.me/263719217210" target="_blank">Chat on WhatsApp</a></div></div>
-<div class="cbox"><h4>✉️ Email</h4><p style="font-size:14px;font-weight:600;word-break:break-all">ropafadzoschamboko@gmail.com</p><div style="margin-top:14px"><a class="btn btn-g" href="mailto:ropafadzoschamboko@gmail.com">Send Email</a></div></div>
+<div class="cbox"><h4>📱 WhatsApp</h4><p style="font-family:Sora;font-size:18px;font-weight:700">+263 719 217 210</p><div style="margin-top:14px"><a class="btn btn-p float" href="https://wa.me/263719217210" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+<div class="cbox"><h4>✉️ Email</h4><p style="font-size:14px;font-weight:600;word-break:break-all">ropafadzoschamboko@gmail.com</p><div style="margin-top:14px"><a class="btn btn-g float float-2" href="mailto:ropafadzoschamboko@gmail.com">Send Email</a></div></div>
 </div>
 </div>
 
