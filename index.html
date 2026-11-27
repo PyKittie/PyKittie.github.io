@@ -5,141 +5,64 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ropafadzo Chamboko — Software Engineer | System Testing • UI/UX • Project Management</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#08080a;--panel:#111113;--panel2:#18181b;--line:#1f1f23;--text:#fafafa;--muted:#9f9fa9;--fuchsia:#ff4da6;--fuchsia2:#ff2f96;--fuchsia-border:rgba(255,77,166,0.28)}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;line-height:1.65}
-a{color:inherit;text-decoration:none}
-.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:rgba(8,8,10,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-.logo{font-family:'Sora',sans-serif;font-weight:800;letter-spacing:-0.04em;border:1.6px solid var(--fuchsia);color:var(--fuchsia);padding:7px 14px;border-radius:999px;font-size:13px}
-.nav{display:flex;gap:28px;align-items:center;color:var(--muted);font-size:13px;font-weight:500;letter-spacing:-0.01em}
-.nav a:hover{color:var(--text)}.cta{border:1px solid var(--fuchsia);color:var(--fuchsia);padding:9px 18px;border-radius:999px;font-weight:600;transition:.2s}.cta:hover{background:var(--fuchsia);color:#000}
-.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
-.hero{position:relative;min-height:100vh;padding:140px 0 80px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:36px 36px;mask-image:radial-gradient(60% 60% at 50% 40%, black, transparent);pointer-events:none}
-.kicker{color:var(--fuchsia);font-family:'Sora',sans-serif;font-size:11.5px;letter-spacing:0.18em;font-weight:600;text-transform:uppercase}
-.h1{font-family:'Sora',sans-serif;font-weight:800;font-size:64px;line-height:0.92;letter-spacing:-0.04em;margin:18px 0 18px}.h1 em{font-style:normal;color:var(--fuchsia)}
-.lead{color:var(--muted);font-size:17px;line-height:1.7;max-width:560px;font-weight:400}
-.pills{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 30px}
-.pill{cursor:pointer;transition:.2s;display:flex;align-items:center;gap:8px;border:1px solid var(--fuchsia-border);background:rgba(255,77,166,0.06);color:#ffe0ee;padding:8px 14px;border-radius:999px;font-size:12.5px;font-weight:600}
-.pill:hover{background:rgba(255,77,166,0.16);border-color:var(--fuchsia);color:#fff}
-.availability{display:inline-flex;align-items:center;gap:9px;margin:24px 0 28px;border:1px solid var(--fuchsia-border);background:rgba(255,77,166,0.06);color:#ffe0ee;padding:9px 15px;border-radius:999px;font-size:12.5px;font-weight:600}
-.availability::before{content:'';width:8px;height:8px;border-radius:50%;background:#59d98e;box-shadow:0 0 10px rgba(89,217,142,0.55)}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{font-family:'Sora',sans-serif;padding:14px 22px;border-radius:999px;font-weight:700;font-size:13.5px;letter-spacing:-0.01em;transition:.2s;cursor:pointer}
-.btn-p{background:var(--fuchsia);color:#000;border:1px solid var(--fuchsia)}.btn-p:hover{background:#ff7ab8}
-.btn-g{border:1px solid var(--fuchsia-border);color:var(--fuchsia);background:transparent}.btn-g:hover{background:rgba(255,77,166,0.08)}
-.profile{position:relative;background:radial-gradient(120% 120% at 30% 20%, rgba(255,77,166,0.18), transparent 55%), var(--panel);border:1px solid var(--line);border-radius:32px;padding:28px;overflow:hidden}
-.avatar{width:100%;aspect-ratio:0.95;max-width:380px;margin:0 auto;border-radius:28px;border:1px solid var(--line);overflow:hidden;background:#18181b}
-.avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
-.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
-.meta b{font-family:'Sora',sans-serif;font-size:22px;letter-spacing:-0.03em}.meta span{color:var(--muted);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600}
-.section{padding:88px 0;border-top:1px solid var(--line)}
-.head{max-width:720px;margin:0 auto 44px;text-align:center}
-.head h2{font-family:'Sora',sans-serif;font-size:40px;letter-spacing:-0.03em;color:var(--fuchsia);font-weight:800}.head p{color:var(--muted);margin-top:12px;font-size:15.5px;line-height:1.7}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;transition:.25s}
-.card:hover{border-color:var(--fuchsia-border);transform:translateY(-2px)}
-.card[id]{scroll-margin-top:110px}.card:target{border-color:var(--fuchsia);box-shadow:0 0 0 1px var(--fuchsia),0 0 40px rgba(255,77,166,0.25)}
-.card h3{font-family:'Sora',sans-serif;font-size:16px;letter-spacing:-0.02em;margin:14px 0 8px}
-.sub{color:var(--muted);font-size:13.5px;line-height:1.6}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.tags span{border:1px solid var(--fuchsia-border);background:rgba(255,77,166,0.07);color:var(--fuchsia);padding:5px 10px;border-radius:999px;font-size:11px;font-weight:600}
-.icon{width:44px;height:44px;border-radius:12px;background:var(--fuchsia);color:#000;display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:800}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.proj{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px}
-.proj.feat{border-color:var(--fuchsia-border);background:radial-gradient(120% 120% at 0% 0%, rgba(255,77,166,0.12), transparent 60%), var(--panel)}
-.badge{display:inline-block;margin-bottom:10px;color:var(--fuchsia);font-family:'Sora',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase}
-#projects{scroll-margin-top:40px}
-.proj h4{font-family:'Sora',sans-serif;font-size:15px;letter-spacing:-0.01em}.proj p{color:var(--muted);font-size:13.5px;margin:8px 0 14px;line-height:1.6}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.cbox{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px}
-.footer{padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px;text-align:center;letter-spacing:0.04em}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 30px;max-width:560px}
-.tile{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:18px;border:1px solid var(--fuchsia-border);background:linear-gradient(160deg,rgba(255,77,166,0.12),rgba(255,77,166,0.02)),var(--panel);transition:transform .25s,box-shadow .25s,border-color .25s}
-.tile:hover{transform:translateY(-6px);border-color:var(--fuchsia);box-shadow:0 16px 36px -12px rgba(255,77,166,0.45)}
-.tile .ti{width:34px;height:34px;border-radius:10px;background:var(--fuchsia);color:#000;display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:800;font-size:12px;margin-bottom:4px}
-.tile b{font-family:'Sora',sans-serif;font-size:13.5px;letter-spacing:-0.01em;line-height:1.25;color:#fff}
-.tile small{color:var(--muted);font-size:11px;font-weight:600;transition:color .2s}.tile:hover small{color:var(--fuchsia)}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.float{display:inline-block;animation:floaty 3.2s ease-in-out infinite;box-shadow:0 12px 28px -14px rgba(255,77,166,0.6)}
-.float-2{animation-delay:-1.6s}
-.float:hover{animation-play-state:paused;box-shadow:0 18px 38px -12px rgba(255,77,166,0.7)}
-.proj{transition:transform .25s,box-shadow .25s,border-color .25s}.proj:hover{transform:translateY(-6px);border-color:var(--fuchsia);box-shadow:0 20px 44px -18px rgba(255,77,166,0.5)}
-.card:hover{box-shadow:0 16px 36px -18px rgba(255,77,166,0.4)}
-@media(prefers-reduced-motion:reduce){.float{animation:none}}
-@media(max-width:520px){.tiles{grid-template-columns:1fr}}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:110px}.h1{font-size:40px}.grid3,.projects,.contact{grid-template-columns:1fr}.nav a:not(.cta){display:none}.head h2{font-size:30px}}
-</style></head>
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<div class="top"><div class="logo">RSC</div><div class="nav"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="cta" href="#contact">Let's Talk</a></div></div>
-<div class="wrap">
-<div class="hero" id="home">
+<header class="top">
+<a class="logo" href="index.html" aria-label="Ropafadzo Chamboko home">RSC</a>
+<nav class="nav" id="site-nav" aria-label="Main navigation">
+<a class="active" href="index.html" aria-current="page">Home</a><a href="about.html">About</a><a href="education.html">Education</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a><a class="cta" href="contact.html">Let's Talk</a>
+</nav>
+<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main class="wrap">
+<section class="hero" id="home">
 <div>
 <div class="kicker">Welcome to my portfolio</div>
 <h1 class="h1">Hello, I'm<br><em>Ropafadzo</em></h1>
 <p class="lead">I'm a third-year Diploma in Software Engineering student at TelOne Centre for Learning. I'm passionate about all things tech.</p>
 <div class="availability">Open to work, collaborations &amp; opportunities</div>
-<div class="btns"><a class="btn btn-p float" href="#projects">View Projects</a><a class="btn btn-g float float-2" id="resume-btn" href="Ropafadzo_Chamboko_CV.pdf" target="_blank" rel="noopener">Download Resume</a></div>
+<div class="btns"><a class="btn btn-p float" href="projects.html">View My Work</a><a class="btn btn-g float float-2" href="contact.html">Contact Me</a></div>
 </div>
 <div class="profile">
 <div class="avatar"><img src="profile.jpg" alt="Ropafadzo Chamboko"></div>
 <div style="text-align:center;margin-top:18px"><h3 style="font-family:Sora;font-size:18px;letter-spacing:-0.02em">Ropafadzo Shumirai Chamboko</h3><p style="color:var(--fuchsia);font-size:12px;margin-top:4px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">System Testing • UI/UX • Project Mgmt</p></div>
-<div class="meta"><div><b>Manual</b><br><span>Testing & QA</span></div><div><b>Agile</b><br><span>Scrum Master</span></div><div><b>Web</b><br><span>Development</span></div></div>
+<div class="meta"><div><b>Manual</b><br><span>Testing &amp; QA</span></div><div><b>Agile</b><br><span>Scrum Master</span></div><div><b>Web</b><br><span>Development</span></div></div>
 </div>
-</div>
+</section>
 
-<div class="section" id="about">
-<div class="head"><h2>About</h2><p>I'm building my skills in software engineering through study and hands-on experience. I enjoy learning, solving problems, and exploring how technology can make a difference.</p></div>
+<div class="section">
 <div class="grid3">
-<div class="card" id="skill-testing"><div class="icon">QA</div><h3>System Testing & Quality Assurance</h3><div class="sub">Manual testing, QA process, test case creation, bug tracking and UAT. Focus on reliability and flawless user experience.</div><div class="sub" style="margin-top:10px">I'm also a student currently doing an internship at <span style="color:#fff;font-weight:600">Lifemark Computers</span> as a Systems Analyst, testing systems to make sure they meet customer requirements.</div><div class="tags"><span>Manual Testing</span><span>QA</span><span>Test Cases</span><span>Bug Tracking</span></div></div>
-<div class="card" id="skill-uiux"><div class="icon">UI</div><h3>UI/UX Design & Website Development</h3><div class="sub">Intuitive, accessible and beautiful interfaces. From wireframes to responsive, production-ready websites.</div><div class="tags"><span>UI/UX Design</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
-<div class="card" id="skill-pm"><div class="icon">PM</div><h3>Project Management • Agile Scrum</h3><div class="sub">Leading projects with Agile Scrum, clear communication, accountability and team-focused delivery.</div><div class="tags"><span>Agile Scrum</span><span>Project Management</span><span>Team Leadership</span></div></div>
+<div class="card"><div class="icon">QA</div><h3>Manual Testing &amp; QA</h3><div class="sub">Manual testing, QA processes, test case creation, bug tracking, and user acceptance testing. I focus on software reliability and a clear user experience.</div><div class="tags"><span>Manual Testing</span><span>QA</span><span>Test Cases</span><span>Bug Tracking</span></div></div>
+<div class="card"><div class="icon">AG</div><h3>Agile Scrum Master</h3><div class="sub">I support team-focused delivery through Agile Scrum practices, clear communication, accountability, and project coordination.</div><div class="tags"><span>Agile Scrum</span><span>Project Management</span><span>Team Leadership</span></div></div>
+<div class="card"><div class="icon">WEB</div><h3>Web Development</h3><div class="sub">I create responsive websites and enjoy bringing intuitive, accessible designs to life.</div><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span></div></div>
 </div>
 </div>
-
-<div class="section" id="expertise">
-<div class="head"><h2>Technical Stack</h2><p>Professional toolkit across testing, design and engineering.</p></div>
-<div class="grid3">
-<div class="card"><h3>Programming & Database</h3><div class="tags"><span>C</span><span>Java</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>MySQL</span></div></div>
-<div class="card"><h3>Testing & Quality</h3><div class="tags"><span>System Testing</span><span>Manual Testing</span><span>QA</span><span>Test Cases</span><span>Bug Tracking</span><span>UAT</span></div></div>
-<div class="card"><h3>Workflow & Delivery</h3><div class="tags"><span>Git</span><span>VS Code</span><span>Agile Scrum</span><span>UI/UX</span><span>Project Management</span><span>Clean Code</span></div></div>
-</div>
-</div>
-
-<div class="section" id="skills">
-<div class="head"><h2>Skills in Practice</h2><p>How I apply my testing, delivery and engineering skills day to day.</p></div>
-<div class="grid3">
-<div class="card"><div class="icon">QA</div><h3>QA Strategy & Test Execution</h3><div class="sub">Built full test plan with 120+ test cases, manual execution and bug tracking board. Reduced production bugs by structured QA.</div><div class="tags"><span>Manual Testing</span><span>QA</span><span>Bug Tracking</span></div></div>
-<div class="card"><div class="icon">AG</div><h3>Agile Delivery Framework</h3><div class="sub">Implemented Scrum ceremonies, sprint planning and delivery tracking. Improved team velocity and communication.</div><div class="tags"><span>Agile Scrum</span><span>Project Management</span></div></div>
-<div class="card"><div class="icon">DB</div><h3>Java / MySQL Enterprise Module</h3><div class="sub">Designed database schema, efficient queries and system testing for reliable data operations.</div><div class="tags"><span>Java</span><span>MySQL</span><span>System Testing</span></div></div>
-</div>
-</div>
-
-<div class="section" id="projects">
-<div class="head"><h2>Selected Work</h2><p>Real projects I have designed, built and shipped.</p></div>
-<div class="projects">
-<div class="proj feat"><div class="badge">Featured</div><h4>MedConnect — Telemedicine App</h4><p>A telemedicine web application that connects patients with healthcare providers online. Built in PHP with a MySQL database, using AI tools like Cursor to speed up development.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>Cursor AI</span><span>Telemedicine</span></div></div>
-<div class="proj feat"><div class="badge">Featured</div><h4>Personal Portfolio Website</h4><p>This portfolio site, built with HTML, version-controlled on GitHub and deployed on Netlify. Black and fuchsia design with a responsive layout.</p><div class="tags"><span>HTML</span><span>GitHub</span><span>Netlify</span><span>UI/UX</span></div></div>
-</div>
-</div>
-
-<div class="section" id="contact">
-<div class="head"><h2>Let's build something reliable.</h2><p>Available for projects, collaborations and professional opportunities in Harare & remote.</p></div>
-<div class="contact">
-<div class="cbox"><h4>📱 WhatsApp</h4><p style="font-family:Sora;font-size:18px;font-weight:700">+263 719 217 210</p><div style="margin-top:14px"><a class="btn btn-p float" href="https://wa.me/263719217210" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
-<div class="cbox"><h4>✉️ Email</h4><p style="font-size:14px;font-weight:600;word-break:break-all">ropafadzoschamboko@gmail.com</p><div style="margin-top:14px"><a class="btn btn-g float float-2" href="mailto:ropafadzoschamboko@gmail.com">Send Email</a></div></div>
-</div>
-</div>
-
-<div class="footer">© 2026 ROPAFADZO S. CHAMBOKO • SYSTEM TESTING • UI/UX • PROJECT MANAGEMENT • SORA + PLUS JAKARTA SANS • BUILT WITH PRECISION</div>
-</div>
+</main>
+<div class="wrap"><footer class="footer">© 2026 ROPAFADZO S. CHAMBOKO • SYSTEM TESTING • UI/UX • PROJECT MANAGEMENT</footer></div>
 <script>
-document.getElementById('resume-btn').addEventListener('click',function(){
-  var a=document.createElement('a');
-  a.href='Ropafadzo_Chamboko_CV.pdf';
-  a.download='Ropafadzo_Chamboko_CV.pdf';
-  document.body.appendChild(a);a.click();a.remove();
+var menuToggle=document.querySelector('.menu-toggle');
+var siteNav=document.getElementById('site-nav');
+menuToggle.addEventListener('click',function(){
+  var isExpanded=menuToggle.getAttribute('aria-expanded')==='true';
+  menuToggle.setAttribute('aria-expanded',String(!isExpanded));
+  menuToggle.setAttribute('aria-label',isExpanded?'Open menu':'Close menu');
+  siteNav.classList.toggle('open',!isExpanded);
+});
+siteNav.addEventListener('click',function(event){
+  if(event.target.tagName.toLowerCase()==='a'){
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+  }
+});
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'&&siteNav.classList.contains('open')){
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+    menuToggle.focus();
+  }
 });
 </script>
 </body></html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ropafadzo Chamboko</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+<a class="logo" href="index.html" aria-label="Ropafadzo Chamboko home">RSC</a>
+<nav class="nav" id="site-nav" aria-label="Main navigation">
+<a href="index.html">Home</a><a href="about.html">About</a><a href="education.html">Education</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a class="active" href="contact.html" aria-current="page">Contact</a><a class="cta" href="contact.html">Let's Talk</a>
+</nav>
+<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main class="wrap">
+<section class="section" id="contact">
+<div class="head"><h2>Let's build something reliable.</h2><p>Available for projects, collaborations and professional opportunities in Harare &amp; remote.</p></div>
+<div class="contact">
+<div class="cbox"><h4>📱 WhatsApp</h4><p style="font-family:Sora;font-size:18px;font-weight:700">+263 719 217 210</p><div style="margin-top:14px"><a class="btn btn-p float" href="https://wa.me/263719217210" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+<div class="cbox"><h4>✉️ Email</h4><p style="font-size:14px;font-weight:600;word-break:break-all">ropafadzoschamboko@gmail.com</p><div style="margin-top:14px"><a class="btn btn-g float float-2" href="mailto:ropafadzoschamboko@gmail.com">Send Email</a></div></div>
+</div>
+</section>
+</main>
+<div class="wrap"><footer class="footer">© 2026 ROPAFADZO S. CHAMBOKO • SYSTEM TESTING • UI/UX • PROJECT MANAGEMENT</footer></div>
+<script>
+var menuToggle=document.querySelector('.menu-toggle');
+var siteNav=document.getElementById('site-nav');
+menuToggle.addEventListener('click',function(){
+  var isExpanded=menuToggle.getAttribute('aria-expanded')==='true';
+  menuToggle.setAttribute('aria-expanded',String(!isExpanded));
+  menuToggle.setAttribute('aria-label',isExpanded?'Open menu':'Close menu');
+  siteNav.classList.toggle('open',!isExpanded);
+});
+siteNav.addEventListener('click',function(event){
+  if(event.target.tagName.toLowerCase()==='a'){
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+  }
+});
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'&&siteNav.classList.contains('open')){
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+    menuToggle.focus();
+  }
+});
+</script>
+</body>
+</html>

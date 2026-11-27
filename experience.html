@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Ropafadzo Chamboko</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+<a class="logo" href="index.html" aria-label="Ropafadzo Chamboko home">RSC</a>
+<nav class="nav" id="site-nav" aria-label="Main navigation">
+<a href="index.html">Home</a><a href="about.html">About</a><a href="education.html">Education</a><a class="active" href="experience.html" aria-current="page">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a><a class="cta" href="contact.html">Let's Talk</a>
+</nav>
+<button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<main class="wrap">
+<section class="section" id="experience">
+<div class="head"><h2>Experience</h2><p>Hands-on industry and volunteer experience.</p></div>
+<div class="experience-grid">
+<div class="card"><div class="icon">SA</div><h3>Systems Analyst Intern (Industrial Attachment)</h3><div class="sub"><strong>Lifemark Computers — Current</strong></div><p class="sub" style="margin-top:12px">Currently on industrial attachment at Lifemark Computers, gaining real exposure to requirements gathering, system analysis, and testing, working with different ERPs and School Management Systems. Testing systems to make sure they meet customer requirements. Also gaining hands-on hardware experience including CCTV installations, WiFi configuration and setup, and working with Smart Boards and more.</p><div class="tags"><span>Requirements Gathering</span><span>System Analysis</span><span>Testing</span><span>ERPs</span><span>School Management Systems</span><span>UAT</span><span>CCTV Installation</span><span>WiFi Configuration</span><span>Smart Boards</span><span>Hardware Setup</span></div></div>
+<div class="card"><div class="icon">DR</div><h3>Volunteer - Drone Technology</h3><div class="sub"><strong>Zimbabwe Flying Labs</strong></div><p class="sub" style="margin-top:12px">Volunteer experience in drone technology, including building and flying drones. Gaining practical exposure to drone assembly, flight operations, and real-world applications of drone technology.</p><div class="tags"><span>Drone Building</span><span>Drone Flying</span><span>Drone Technology</span><span>Volunteering</span></div></div>
+</div>
+<h3 class="subsection-title" style="margin-top:52px">Skills in Practice</h3>
+<div class="grid3">
+<div class="card"><div class="icon">QA</div><h3>QA Strategy &amp; Test Execution</h3><div class="sub">Built full test plan with 120+ test cases, manual execution and bug tracking board. Reduced production bugs by structured QA.</div><div class="tags"><span>Manual Testing</span><span>QA</span><span>Bug Tracking</span></div></div>
+<div class="card"><div class="icon">UI</div><h3>UI/UX Design &amp; Website Development</h3><div class="sub">Intuitive, accessible and beautiful interfaces. From wireframes to responsive, production-ready websites.</div><div class="tags"><span>UI/UX Design</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
+<div class="card"><div class="icon">PM</div><h3>Project Management - Agile Scrum</h3><div class="sub">Leading projects with Agile Scrum, clear communication, accountability and team-focused delivery.</div><div class="tags"><span>Agile Scrum</span><span>Project Management</span><span>Team Leadership</span></div></div>
+<div class="card"><div class="icon">AG</div><h3>Agile Delivery Framework</h3><div class="sub">Implemented Scrum ceremonies, sprint planning and delivery tracking. Improved team velocity and communication.</div><div class="tags"><span>Agile Scrum</span><span>Project Management</span></div></div>
+<div class="card"><div class="icon">DB</div><h3>Java / MySQL Enterprise Module</h3><div class="sub">Designed database schema, efficient queries and system testing for reliable data operations.</div><div class="tags"><span>Java</span><span>MySQL</span><span>System Testing</span></div></div>
+</div>
+</section>
+</main>
+<div class="wrap"><footer class="footer">© 2026 ROPAFADZO S. CHAMBOKO • SYSTEM TESTING • UI/UX • PROJECT MANAGEMENT</footer></div>
+<script>
+var menuToggle=document.querySelector('.menu-toggle');
+var siteNav=document.getElementById('site-nav');
+menuToggle.addEventListener('click',function(){
+  var isExpanded=menuToggle.getAttribute('aria-expanded')==='true';
+  menuToggle.setAttribute('aria-expanded',String(!isExpanded));
+  menuToggle.setAttribute('aria-label',isExpanded?'Open menu':'Close menu');
+  siteNav.classList.toggle('open',!isExpanded);
+});
+siteNav.addEventListener('click',function(event){
+  if(event.target.tagName.toLowerCase()==='a'){
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+  }
+});
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'&&siteNav.classList.contains('open')){
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute('aria-label','Open menu');
+    menuToggle.focus();
+  }
+});
+</script>
+</body>
+</html>
